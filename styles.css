@@ -17,7 +17,6 @@ body {
 .textarea {
   border: 6px solid #510053;
   background-color: transparent;
-  box-shadow: 0px 0px 18px 4px #510053;
   border-radius: 33px;
   width: 600px;
   height: 200px;
@@ -29,6 +28,7 @@ body {
   color: #cfcfcf;
   resize: unset;
   margin: 60px 0 68px;
+  transition: .1s ease-in;
 }
 
 .textarea::placeholder {
@@ -38,6 +38,7 @@ body {
 .textarea:active,
 .textarea:focus {
   outline: unset;
+  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
 }
 
 /* The container must be positioned relative: */
@@ -52,8 +53,13 @@ body {
 .select-selected {
   background-color: transparent;
   border: 6px solid #510053;
-  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
   border-radius: 33px;
+  transition: .1s ease-in;
+}
+
+.select-arrow-active {
+  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
+
 }
 
 .option__text {
@@ -97,7 +103,8 @@ body {
   right: 0;
   z-index: 99;
   border: 6px solid #510053;
-  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
+  box-shadow: 0px 0px 18px 4px #510053;
+  transition: .1s ease-in;
   border-radius: 33px;
   background-color: #1a1a1a;
   margin-top: 30px;
@@ -106,20 +113,24 @@ body {
 /* Hide the items when the select box is closed: */
 .select-hide {
   display: none;
+  box-shadow: unset;
 }
 
 #btn {
-  border: 10px solid #510053;
-  border-radius: 50%;
   width: 125px;
   height: 125px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 50px 10px rgba(81, 0, 83, 0.7), inset 0px 0px 50px 10px rgba(81, 0, 83, 0.7);
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* box-shadow: 0px 0px 50px 10px rgba(81, 0, 83, 0.7), inset 0px 0px 50px 10px rgba(81, 0, 83, 0.7); */
   cursor: pointer;
+  transition: filter .2s ease-in;
+}
+
+#btn:hover {
+  filter: drop-shadow(0 0 10px rgba(81, 0, 83, 1));
+}
+
+#btn:active {
+  filter: drop-shadow(0 0 10px rgba(81, 0, 83, .5));
 }
 
 .btn__img {
@@ -136,12 +147,12 @@ body {
 
 .github svg {
   fill: #929292;
-  transition: .1s ease-in;
+  transition: .2s ease-in;
   width: 50px;
   height: 50px;
 }
 
 .github:hover svg {
-  filter: drop-shadow(0px 0px 30px #410042);
+  filter: drop-shadow(0px 0px 10px #410042);
   fill: #5F0061 !important;
 }
