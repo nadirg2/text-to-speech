@@ -1,0 +1,128 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  box-sizing: border-box;
+  padding: 40px 0;
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+}
+
+.textarea {
+  border: 6px solid #510053;
+  background-color: transparent;
+  box-shadow: 0px 0px 18px 4px #510053;
+  border-radius: 33px;
+  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
+  width: 600px;
+  height: 200px;
+  padding: 40px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #cfcfcf;
+  resize: unset;
+  margin: 60px 0 68px;
+}
+
+.textarea::placeholder {
+  color: #bbbbbb;
+}
+
+.textarea:active,
+.textarea:focus {
+  outline: unset;
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: transparent;
+  border: 6px solid #510053;
+  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
+  border-radius: 33px;
+}
+
+.option__text {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  width: 418px;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  content: url(imgs/arrow.svg);
+  margin-left: 10px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items > div,
+.select-selected {
+  color: #cfcfcf;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  padding: 0 35px;
+  width: 500px;
+  height: 90px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.select-items>div:hover  {
+  color:#fff;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border: 6px solid #510053;
+  box-shadow: 0px 0px 18px 4px #510053, inset 0px 0px 18px 4px #510053;
+  border-radius: 33px;
+  background-color: #1a1a1a;
+  margin-top: 30px;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+#btn {
+  border: 10px solid #510053;
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 50px 10px rgba(81, 0, 83, 0.7), inset 0px 0px 50px 10px rgba(81, 0, 83, 0.7);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn__img {
+  margin-left: 13px;
+}
